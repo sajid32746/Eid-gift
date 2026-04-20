@@ -2,233 +2,251 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>ঈদ মোবারক ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tanjila 💖</title>
 
 <style>
-/* সাধারণ স্টাইল - মোবাইল ফ্রেন্ডলি */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  color: white;
-  text-align: center;
-  background: linear-gradient(45deg, #0f0c29, #302b63, #7209b7);
-  background-size: 400% 400%;
-  animation: bg 12s infinite;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  font-family: 'Comic Sans MS', cursive;
+  overflow:hidden;
 }
 
-@keyframes bg {
-  0% { background-position: 0% 50% }
-  50% { background-position: 100% 50% }
-  100% { background-position: 0% 50% }
+.container {
+  text-align:center;
+  color:white;
 }
 
-/* পেজ লেআউট */
-.page {
-  display: none;
-  min-height: 100vh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 40px 20px;
-  box-sizing: border-box;
+/* glowing name */
+h1 {
+  font-size:32px;
+  animation: glow 2s infinite alternate;
 }
-.active { display: flex; }
 
-/* টেক্সট ও টাইপিং ইফেক্ট */
-h1, h2, p {
-  text-shadow: 0 0 10px rgba(255, 77, 109, 0.6);
-  line-height: 1.6;
-  margin: 15px 0;
+@keyframes glow {
+  from { text-shadow: 0 0 5px #fff; }
+  to { text-shadow: 0 0 20px #ff4d6d, 0 0 30px #ff4d6d; }
 }
-h2 { font-size: 20px; width: 90%; }
-.typing { border-right: 2px solid white; animation: blink .7s infinite; }
-@keyframes blink { 50% { border-color: transparent; } }
 
-/* বাটন ও ইনপুট */
+/* cat */
+.cat {
+  width:100px;
+  height:100px;
+  background:white;
+  border-radius:50%;
+  position:relative;
+  margin:auto;
+  cursor:pointer;
+}
+
+.jump {
+  animation: jump 0.5s;
+}
+
+@keyframes jump {
+  0% { transform:translateY(0); }
+  50% { transform:translateY(-30px); }
+  100% { transform:translateY(0); }
+}
+
+.ear {
+  width:30px;
+  height:30px;
+  background:white;
+  position:absolute;
+  top:-10px;
+  border-radius:50%;
+}
+
+.ear.left { left:10px; }
+.ear.right { right:10px; }
+
+.eye {
+  width:15px;
+  height:15px;
+  background:black;
+  border-radius:50%;
+  position:absolute;
+  top:35px;
+  animation: blink 3s infinite;
+}
+
+.eye.left { left:25px; }
+.eye.right { right:25px; }
+
+@keyframes blink {
+  0%, 90%, 100% { height:15px; }
+  95% { height:2px; }
+}
+
+.mouth {
+  width:20px;
+  height:10px;
+  border-bottom:3px solid black;
+  border-radius:50%;
+  position:absolute;
+  bottom:25px;
+  left:40px;
+}
+
+/* speech bubble */
+.bubble {
+  position:absolute;
+  top:-60px;
+  left:50%;
+  transform:translateX(-50%);
+  background:white;
+  color:#333;
+  padding:5px 10px;
+  border-radius:10px;
+  font-size:12px;
+  display:none;
+}
+
+/* text */
+p {
+  font-size:22px;
+  min-height:50px;
+}
+
 button {
-  padding: 12px 30px;
-  margin: 15px 0;
-  border: none;
-  border-radius: 30px;
-  background: #ff4d6d;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  z-index: 10;
-}
-input {
-  padding: 12px;
-  border-radius: 10px;
-  border: 2px solid #ff4d6d;
-  width: 80%;
-  max-width: 250px;
-  text-align: center;
-  outline: none;
-  color: #333;
-  font-size: 16px;
+  display:none;
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:white;
+  color:#ff4d6d;
+  cursor:pointer;
 }
 
-/* চাঁদ ও অন্যান্য এলিমেন্ট */
-.moon { font-size: 50px; margin-top: 20px; animation: beat 1s infinite; }
-@keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+/* heart rain */
+.heart {
+  position:absolute;
+  color:white;
+  animation: float 4s linear infinite;
+}
 
-#musicBtn { position: fixed; top: 15px; right: 15px; z-index: 1000; padding: 8px 15px; font-size: 14px; margin: 0; }
-.fire { position: absolute; animation: fire 1s forwards; font-size: 25px; pointer-events: none; }
-@keyframes fire { to { transform: translateY(-300px); opacity: 0; } }
+@keyframes float {
+  0% { transform: translateY(0); opacity:1; }
+  100% { transform: translateY(-600px); opacity:0; }
+}
 
-.heart-float { position: absolute; bottom: -50px; animation: float 6s linear infinite; pointer-events: none; }
-@keyframes float { 0% { transform: translateY(0) rotate(0deg); opacity: 0.8; } 100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
+/* popup */
+.popup {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:white;
+  color:#333;
+  padding:20px;
+  border-radius:15px;
+  display:none;
+}
 </style>
 </head>
 
 <body>
 
-<div class="moon">🌙</div>
+<div class="container">
 
-<button id="musicBtn" onclick="musicToggle()">🎵 Music: Off</button>
+  <div class="cat" onclick="catClick()" id="cat">
+    <div class="bubble" id="bubble">I care about you 💖</div>
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="mouth"></div>
+  </div>
 
-<audio id="music" loop preload="auto">
-  <source src="https://www.bensound.com/bensound-music/bensound-memories.mp3" type="audio/mpeg">
+  <h1>Tanjila 💖</h1>
+  <p id="text"></p>
+  <button id="btn" onclick="showPopup()">Click Me 💌</button>
+
+</div>
+
+<div class="popup" id="popup">
+  <p>তুমি আমার কাছে সত্যিই অনেক important 💖🙂</p>
+</div>
+
+<!-- cute music -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-cute.mp3" type="audio/mp3">
 </audio>
 
-<div class="page active" id="p1">
-  <h1>Welcome Dear Pakhi 💖</h1>
-  <button onclick="startApp()">Start</button>
-</div>
-
-<div class="page" id="p2">
-  <h2>তোমার নাম লিখুন</h2>
-  <input id="name" type="text" placeholder="এখানে নাম লিখুন...">
-  <button onclick="goName()">Next</button>
-</div>
-
-<div class="page" id="p3">
-  <h2 id="m1"></h2>
-  <button id="nextBtn3" style="display:none;" onclick="go(3)">Next</button>
-</div>
-
-<div class="page" id="p4">
-  <h2 id="m2"></h2>
-  <p id="final-msg"></p>
-</div>
-
 <script>
-let music = document.getElementById("music");
-let isPlaying = false;
+const messages = [
+"তুমি মন খারাপ করো না... 😔",
+"সব ঠিক হয়ে যাবে 🌈",
+"তুমি অনেক special 💖",
+"তোমার হাসিটা সবচেয়ে সুন্দর 😄",
+"আমি সবসময় তোমার পাশে আছি 🤍",
+"একটু হাসো তো... 😊",
+"END 💖"
+];
 
-// প্রথম ক্লিকেই মিউজিক শুরু করার জন্য
-function startApp() {
-    music.play().then(() => {
-        isPlaying = true;
-        document.getElementById("musicBtn").innerHTML = "⏸ Music: On";
-    }).catch(e => console.log("Music auto-play blocked, wait for user interaction."));
-    go(1);
-}
+let msgIndex = 0;
+let charIndex = 0;
 
-function musicToggle() {
-    if (!isPlaying) { 
-        music.play(); 
-        isPlaying = true; 
-        document.getElementById("musicBtn").innerHTML = "⏸ Music: On"; 
-    } else { 
-        music.pause(); 
-        isPlaying = false; 
-        document.getElementById("musicBtn").innerHTML = "🎵 Music: Off"; 
+function typeEffect() {
+  if(msgIndex < messages.length){
+    if(charIndex < messages[msgIndex].length){
+      document.getElementById("text").innerHTML += messages[msgIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeEffect, 50);
+    } else {
+      setTimeout(() => {
+        document.getElementById("text").innerHTML = "";
+        charIndex = 0;
+        msgIndex++;
+        typeEffect();
+      }, 1500);
     }
+  } else {
+    document.getElementById("btn").style.display = "inline-block";
+  }
 }
 
-function go(n) {
-    document.getElementById("p" + n).classList.remove("active");
-    document.getElementById("p" + (n + 1)).classList.add("active");
-    window.scrollTo(0, 0); // পেজ চেঞ্জ হলে একদম উপরে নিয়ে যাবে
-    if (n + 1 == 4) { firework(); floatingHearts(); finalMessage(); }
+typeEffect();
+
+/* cat click */
+function catClick(){
+  let cat = document.getElementById("cat");
+  let bubble = document.getElementById("bubble");
+
+  cat.classList.add("jump");
+  bubble.style.display = "block";
+
+  setTimeout(() => {
+    cat.classList.remove("jump");
+    bubble.style.display = "none";
+  },1000);
 }
 
-// টাইপিং ইফেক্ট (HTML ট্যাগ হ্যান্ডেল করবে এবং অটো স্ক্রল করবে)
-function typeText(el, text, callback) {
-    let i = 0;
-    el.innerHTML = "";
-    el.classList.add("typing");
-    function typing() {
-        if (i < text.length) {
-            if (text.charAt(i) === '<') {
-                let tagEnd = text.indexOf('>', i);
-                if (tagEnd !== -1) { 
-                    el.innerHTML += text.substring(i, tagEnd + 1); 
-                    i = tagEnd + 1; 
-                }
-            } else { 
-                el.innerHTML += text.charAt(i); 
-                i++; 
-            }
-            // কন্টেন্ট বড় হলে নিজে থেকে নিচে নামবে (Mobile Friendly)
-            window.scrollTo(0, document.body.scrollHeight);
-            setTimeout(typing, 40);
-        } else {
-            el.classList.remove("typing");
-            if (callback) callback();
-        }
-    }
-    typing();
+/* popup */
+function showPopup(){
+  document.getElementById("popup").style.display = "block";
 }
 
-function goName() {
-    let userName = document.getElementById("name").value;
-    if (userName.trim() == "") { alert("দয়া করে নাম লিখুন!"); return; }
+/* heart rain */
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "💗";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (Math.random()*20 + 10) + "px";
+  document.body.appendChild(heart);
 
-    let message = `💖 ${userName}, তুমি আমার জীবনের অনেক দামি একজন মানুষ 😊💝<br><br>
-    আমার জীবনের প্রতিটি মুহুর্ত তোমার উপস্থিতিতে আরও সুন্দর হয়ে ওঠে।🫠🫶<br><br>
-    ঈদের এই আনন্দময় দিনে একটাই চাওয়া—তুমি যেখানেই থাকো, সুস্থ থেকো আর সব সময় হাসিখুশি থাকো।❤️‍🩹🥹<br><br>
-    ঈদের দিনের আনন্দ তোমার জীবনকে সারাবছর হাসিখুশি রাখুক। 🥰💫`;
-
-    go(2);
-    typeText(document.getElementById("m1"), message, () => {
-        document.getElementById("nextBtn3").style.display = "inline-block";
-        window.scrollTo(0, document.body.scrollHeight);
-    });
-    document.getElementById("m2").innerHTML = `🌙 ঈদ মোবারক ${userName} 💖`;
-}
-
-function finalMessage() {
-    let finalTxt = `অনেক অনেক ভালোবাসা তোমার জন্য পাখি 😊💝<br><br>
-    কোনো ভুল করলে বা আমার কোনো কথায় কষ্ট পেয়ে থাকলে মাফ করে দিও 💖<br><br>
-    কষ্ট করে এতো দূর আসার জন্য ধন্যবাদ ❤️`;
-    typeText(document.getElementById("final-msg"), finalTxt, () => {
-        document.getElementById("final-msg").innerHTML += `<br><br><span style="font-size:24px; color:#ff4d6d;">🎉 End 🎉</span>`;
-        window.scrollTo(0, document.body.scrollHeight);
-    });
-}
-
-function firework() {
-    setInterval(() => {
-        let f = document.createElement("div");
-        f.className = "fire"; f.innerHTML = "🎆";
-        f.style.left = Math.random() * 90 + "vw";
-        f.style.top = "80vh";
-        document.body.appendChild(f);
-        setTimeout(() => f.remove(), 1000);
-    }, 400);
-}
-
-function floatingHearts() {
-    setInterval(() => {
-        let h = document.createElement("div");
-        h.className = "heart-float"; h.innerHTML = "💖";
-        h.style.left = Math.random() * 100 + "vw";
-        h.style.fontSize = (15 + Math.random() * 20) + "px";
-        document.body.appendChild(h);
-        setTimeout(() => h.remove(), 6000);
-    }, 500);
-}
+  setTimeout(() => {
+    heart.remove();
+  },4000);
+},250);
 </script>
 
 </body>
